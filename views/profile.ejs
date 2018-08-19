@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #ff6666;
+            padding: 10px;
+        }
+
+        li {
+            list-style-type: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background: #ff9999;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+            margin-right: 10px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <% if(user) { %>
+                <li><a href="/auth/logout">Logout</a></li>
+            <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </header>
+    <main>
+        <div>Welcome to your profile, <%= user.username%></div>
+        <div>
+            Here is your extra information
+        </div>
+    </main>
+</body>
+
+</html>

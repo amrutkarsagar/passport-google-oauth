@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #ff6666;
+            padding: 10px;
+        }
+
+        li {
+            list-style-type: none;
+            font-weight: bold;
+            background: #ff9999;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+            margin-right: 10px;
+        }
+
+        div button {
+            background: #ff6666;
+            margin: 20px 0 0 10px;
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <% if(user) { %>
+                <li><a href="/auth/logout">Logout</a></li>
+            <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </header>
+    <div>
+        <button><a href="/auth/google">Google+</a></button>
+    </div>
+</body>
+
+</html>
